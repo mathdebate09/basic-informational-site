@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BVB09 Fan Club | Home</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+            color: #FBE93E;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #FBE93E;
+            color: #000000;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 0;
+        }
+        nav {
+            background-color: #000000;
+            padding: 10px 0;
+            border-bottom: 3px solid #FBE93E;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav li {
+            margin: 0 15px;
+        }
+        nav a {
+            color: #FBE93E;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .current {
+            border-bottom: 2px solid #FBE93E;
+        }
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/placeholder.svg?height=500&width=1000');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .hero-content {
+            max-width: 800px;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #FBE93E;
+            color: #000000;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #fff06e;
+            transform: translateY(-3px);
+        }
+        .content-section {
+            margin-bottom: 40px;
+        }
+        .content-section h2 {
+            border-bottom: 2px solid #FBE93E;
+            padding-bottom: 10px;
+        }
+        .match-card {
+            background-color: #111111;
+            border-left: 4px solid #FBE93E;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+        .news-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #333;
+        }
+        footer {
+            background-color: #111111;
+            color: #FBE93E;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            border-top: 3px solid #FBE93E;
+        }
+        .social-links {
+            margin: 15px 0;
+        }
+        .social-links a {
+            color: #FBE93E;
+            margin: 0 10px;
+            font-size: 1.2rem;
+            text-decoration: none;
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav li {
+                margin: 5px 0;
+            }
+            .hero {
+                height: 300px;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">BVB09 FAN CLUB</h1>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="http://localhost:8080" class="current">Home</a></li>
+                <li><a href="http://localhost:8080/about">About</a></li>
+                <li><a href="http://localhost:8080/contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="hero">
+        <div class="hero-content">
+            <h1>WELCOME TO THE BVB09 FAN CLUB</h1>
+            <p>The ultimate community for Borussia Dortmund supporters</p>
+            <a href="about.html" class="btn">Learn More</a>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="content-section">
+            <h2>UPCOMING MATCHES</h2>
+            <div class="match-card">
+                <h3>Bundesliga: BVB vs. Bayern Munich</h3>
+                <p>Saturday, May 15, 2023 | 18:30 CET | Signal Iduna Park</p>
+                <p>Der Klassiker! Don't miss the biggest match of the season!</p>
+            </div>
+            <div class="match-card">
+                <h3>Champions League: BVB vs. Real Madrid</h3>
+                <p>Tuesday, May 18, 2023 | 21:00 CET | Signal Iduna Park</p>
+                <p>European nights return to the Westfalenstadion!</p>
+            </div>
+            <div class="match-card">
+                <h3>Bundesliga: RB Leipzig vs. BVB</h3>
+                <p>Saturday, May 22, 2023 | 15:30 CET | Red Bull Arena</p>
+                <p>A crucial away match in our title chase!</p>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2>LATEST NEWS</h2>
+            <div class="news-item">
+                <h3>Marco Reus Extends Contract Until 2024</h3>
+                <p>Our captain has committed his future to the club with a new contract extension!</p>
+            </div>
+            <div class="news-item">
+                <h3>New Home Kit Revealed for 2023/24 Season</h3>
+                <p>The iconic black and yellow stripes return with a modern twist for the upcoming season.</p>
+            </div>
+            <div class="news-item">
+                <h3>Fan Club Membership Now Open</h3>
+                <p>Join our official fan club today to get exclusive access to tickets and events!</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>BVB09 Fan Club - Echte Liebe</p>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+                <a href="#">YouTube</a>
+            </div>
+            <p>&copy; 2023 BVB09 Fan Club. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
