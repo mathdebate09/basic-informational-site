@@ -1,46 +1,30 @@
-const http = require('http');
-const url = require('url');
-const fs = require('fs').promises;
-const path = require('path');
+const express = require("express");
+const path = require("path");
+const app = express();
 
-const PORT = 8080;
-const PAGES_DIR = './pages';
+const PORT = 8080
+const PAGES_DIR = path.join(__dirname, 'pages');
 
-async function serveFile(filePath, res) {
-  try {
-    const data = await fs.readFile(filePath);
-    res.writeHead(200, { 'Content-Type': 'text/html' });
-    res.end(data);
-  } catch (err) {
-    await serve404(res);
-  }
-}
+// static declaration at first
+app.use(express.static(path.join(__dirname)));
 
-async function serve404(res) {
-  try {
-    const data = await fs.readFile(path.join(PAGES_DIR, '404.html'));
-    res.writeHead(404, { 'Content-Type': 'text/html' });
-    res.end(data);
-  } catch (err) {
-    res.writeHead(404, { 'Content-Type': 'text/html' });
-    res.end('404 Not Found');
-  }
-}
-
-const server = http.createServer(async (req, res) => {
-  const parsedUrl = url.parse(req.url, true);
-  const pathname = parsedUrl.pathname;
-  
-  let filePath;
-  if (pathname === '/') {
-    filePath = './index.html';
-  } else {
-    filePath = path.join(PAGES_DIR, `${pathname}.html`);
-  }
-
-  await serveFile(filePath, res);
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "index.html"));
 });
 
-server.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}/`);
+app.get("/about", (req, res) => {
+    res.sendFile(path.join(PAGES_DIR, "about.html"));
+});
+
+app.get("/contact", (req, res) => {
+    res.sendFile(path.join(PAGES_DIR, "contact.html"));
+});
+
+// 404 at end
+app.use((req, res) => {
+    res.status(404).sendFile(path.join(PAGES_DIR, "404.html"));
+});
+
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });
